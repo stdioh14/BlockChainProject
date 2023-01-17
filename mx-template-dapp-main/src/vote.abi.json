@@ -1,0 +1,101 @@
+{
+    "buildInfo": {
+        "rustc": {
+            "version": "1.68.0-nightly",
+            "commitHash": "afaf3e07aaa7ca9873bdb439caec53faffa4230c",
+            "commitDate": "2023-01-14",
+            "channel": "Nightly",
+            "short": "rustc 1.68.0-nightly (afaf3e07a 2023-01-14)"
+        },
+        "contractCrate": {
+            "name": "vote",
+            "version": "0.0.0"
+        },
+        "framework": {
+            "name": "elrond-wasm",
+            "version": "0.36.0"
+        }
+    },
+    "name": "Vote",
+    "constructor": {
+        "inputs": [],
+        "outputs": []
+    },
+    "endpoints": [
+        {
+            "name": "update_question",
+            "onlyOwner": true,
+            "mutability": "mutable",
+            "inputs": [
+                {
+                    "name": "newQuestion",
+                    "type": "utf-8 string"
+                }
+            ],
+            "outputs": []
+        },
+        {
+            "name": "reset",
+            "onlyOwner": true,
+            "mutability": "mutable",
+            "inputs": [],
+            "outputs": []
+        },
+        {
+            "name": "voteYes",
+            "mutability": "mutable",
+            "inputs": [],
+            "outputs": []
+        },
+        {
+            "name": "voteNo",
+            "mutability": "mutable",
+            "inputs": [],
+            "outputs": []
+        },
+        {
+            "name": "getQuestion",
+            "mutability": "readonly",
+            "inputs": [],
+            "outputs": [
+                {
+                    "type": "utf-8 string"
+                }
+            ]
+        },
+        {
+            "name": "getNrNos",
+            "mutability": "readonly",
+            "inputs": [],
+            "outputs": [
+                {
+                    "type": "u32"
+                }
+            ]
+        },
+        {
+            "name": "getNrYes",
+            "mutability": "readonly",
+            "inputs": [],
+            "outputs": [
+                {
+                    "type": "u32"
+                }
+            ]
+        },
+        {
+            "name": "votedList",
+            "mutability": "readonly",
+            "inputs": [],
+            "outputs": [
+                {
+                    "type": "variadic<Address>",
+                    "multi_result": true
+                }
+            ]
+        }
+    ],
+    "events": [],
+    "hasCallback": false,
+    "types": {}
+}
